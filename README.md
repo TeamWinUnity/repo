@@ -1,5 +1,5 @@
 # repo
 
-Экономическая стратегия
+Space Wars
 Авторы:
 TeamWin TI-155
