@@ -34,3 +34,5 @@ sysinfo.txt
 **/metadata/**
 **/Temp/**
 *.cache
+**/Library/**
+**/ProjectSettings/**
