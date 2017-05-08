@@ -13,14 +13,31 @@ namespace Assets.Scripts
     public class PlayerController : MonoBehaviour
     {
         private Rigidbody _body;
+        private float _nextFire;
 
         public Bounds GameBounds;
         public float Speed;
         public float Tilt;
 
+        public GameObject Shot;
+        public Transform ShotsSpawn;
+
+        public float FireRate;
+
         void Start()
         {
             _body = GetComponent<Rigidbody>();
+        }
+
+        void Update()
+        {
+            bool firePressed = Input.GetKey(KeyCode.Space);
+
+            if (Time.time > _nextFire && firePressed)
+            {
+                _nextFire = Time.time + FireRate;
+                Instantiate(Shot, ShotsSpawn.position, Quaternion.identity);
+            }
         }
 
         void FixedUpdate()
