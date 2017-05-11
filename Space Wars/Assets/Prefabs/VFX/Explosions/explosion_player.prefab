@@ -78,6 +78,7 @@ GameObject:
   - component: {fileID: 400010}
   - component: {fileID: 19800010}
   - component: {fileID: 19900010}
+  - component: {fileID: 114655496916294336}
   m_Layer: 0
   m_Name: explosion_player
   m_TagString: Untagged
@@ -21336,3 +21337,15 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100008}
   m_IsPrefabParent: 1
+--- !u!114 &114655496916294336
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: addf37eeda8d5d14d8b87907c6539260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 1
