@@ -37,6 +37,8 @@ namespace Assets.Scripts
             {
                 _nextFire = Time.time + FireRate;
                 Instantiate(Shot, ShotsSpawn.position, Quaternion.identity);
+                AudioSource audio = GetComponent<AudioSource>();
+                audio.Play();
             }
         }
 
