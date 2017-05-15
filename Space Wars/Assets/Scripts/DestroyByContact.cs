@@ -8,12 +8,17 @@ namespace Assets.Scripts
 
         void OnTriggerEnter(Collider other)
         {
-            if (other.tag == "Boundary") return;
+            if (other.tag == "Boundary")
+            {
+                return;
+            }
 
             Instantiate(explosion, transform.position, transform.rotation);
+
             if (other.tag == "Player")
             {
                 Instantiate(playerExplosion, other.transform.position, transform.rotation);
+                //GameController.GameOver();
             }
 
             Destroy(other.gameObject);
