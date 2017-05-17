@@ -21,6 +21,7 @@ namespace Assets.Scripts
     {
         public GameObject hazard;
         public Vector3 spawnValues;
+		public GameObject[] hazards;
         public int hazardCount;
         public float spawnWait;
         public float startWait;
@@ -69,9 +70,10 @@ namespace Assets.Scripts
                 if (Started)
                     for (int i = 0; i < hazardCount; i++)
                     {
-                        Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
-                        Quaternion spawnRoatation = Quaternion.identity;
-                        Instantiate(hazard, spawnPosition, spawnRoatation);
+                        GameObject hazard = hazards [UnityEngine.Random.Range (0, hazards.Length)];
+						Vector3 spawnPosition = new Vector3(UnityEngine.Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
+						Quaternion spawnRoatation = Quaternion.identity;
+						Instantiate(hazard, spawnPosition, spawnRoatation);
                         if (GameOver) break;
                         yield return new WaitForSeconds(waveWait);
                     }
@@ -110,7 +112,7 @@ namespace Assets.Scripts
                     FileMode.Open);
                 currentBest = ((GameState) bf.Deserialize(file)).BestScore;
                 file.Close();
-            }
+			}
             else currentBest = 0;
         }
 
