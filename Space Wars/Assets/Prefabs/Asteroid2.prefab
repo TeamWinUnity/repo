@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114666333531056082}
   m_Layer: 0
   m_Name: Asteroid2
-  m_TagString: Untagged
+  m_TagString: Asteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,8 +154,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
   playerExplosion: {fileID: 100008, guid: a93496017806b7740910df5fd946f306, type: 2}
-  destroyer: {fileID: 0}
-  scoreValue: 0
+  destroyer: {fileID: 1900785154634742, guid: 285b37cb57b8a7c40a1cd77af20f6c70, type: 2}
+  scoreValue: 10
 --- !u!114 &114666333531056082
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9e6b08cafa07614a8a6e28668f8a7fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -2.8
+  speed: -3.5
 --- !u!136 &136428882632874438
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -175,9 +175,9 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1412164684925566}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.66
-  m_Height: 1.7
+  m_Radius: 0.5
+  m_Height: 1.3
   m_Direction: 0
   m_Center: {x: -0.009545922, y: -0.0184834, z: -0.033254147}
