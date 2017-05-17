@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114787021839196404}
   m_Layer: 0
   m_Name: Asteroid
-  m_TagString: Untagged
+  m_TagString: Asteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9e6b08cafa07614a8a6e28668f8a7fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -2.8
+  speed: -3
 --- !u!114 &114892368279480114
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -175,9 +175,9 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1010330473166212}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.4759786
-  m_Height: 1.4566092
+  m_Radius: 0.5
+  m_Height: 1.5
   m_Direction: 1
   m_Center: {x: -0.009545922, y: -0.0184834, z: -0.033254147}

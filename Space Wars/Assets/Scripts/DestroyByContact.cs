@@ -41,7 +41,7 @@ namespace Assets.Scripts
                 Instantiate(playerExplosion, other.transform.position, transform.rotation);
                 Instantiate(destroyer, other.transform.position, transform.rotation);
                 gameController.EndGame();
-            } else gameController.AddScore(scoreValue);
+            } else if(other.tag == "Bolt") gameController.AddScore(scoreValue);
             Destroy(other.gameObject);
             Destroy(gameObject);
         }

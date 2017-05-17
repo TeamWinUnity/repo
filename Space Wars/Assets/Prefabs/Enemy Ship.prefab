@@ -56,9 +56,10 @@ GameObject:
   - component: {fileID: 54383153105942490}
   - component: {fileID: 135313313702317422}
   - component: {fileID: 114573560398232424}
+  - component: {fileID: 114157905955134374}
   m_Layer: 0
   m_Name: Enemy Ship
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,7 +84,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1366188665910548}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -0.26}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4963368056955956}
@@ -161,6 +162,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114157905955134374
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1962703020375708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9e6b08cafa07614a8a6e28668f8a7fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: -4
 --- !u!114 &114573560398232424
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -174,6 +187,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 100012, guid: 384371afbb4354cc9a3fc68eab303756, type: 2}
   playerExplosion: {fileID: 100008, guid: a93496017806b7740910df5fd946f306, type: 2}
+  destroyer: {fileID: 0}
+  scoreValue: 40
 --- !u!135 &135313313702317422
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -181,11 +196,11 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1962703020375708}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.94
-  m_Center: {x: 0, y: 0.01, z: -0.59}
+  m_Radius: 0.75
+  m_Center: {x: 0, y: 0, z: -0.3}
 --- !u!198 &198794595970166028
 ParticleSystem:
   m_ObjectHideFlags: 1

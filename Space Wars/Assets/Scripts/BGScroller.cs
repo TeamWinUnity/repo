@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BGScroller : MonoBehaviour {
-
     public float scrollSpeed;
     public float tileSizeZ;
 
