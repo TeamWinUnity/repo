@@ -27,6 +27,8 @@ namespace Assets.Scripts
         public float startWait;
         public float waveWait;
 
+        public BGScroller scroller;
+
         public Text scoreText;
         public Text startText;
         public Text gameOverText;
@@ -36,6 +38,7 @@ namespace Assets.Scripts
         public bool Started { get; set; }
         private int score;
         private int currentBest;
+        private bool bgChanged;
 
         void Start()
         {

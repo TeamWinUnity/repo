@@ -37,10 +37,8 @@ namespace Assets.Scripts
         void Update()
         {
             if (!EnableControl) return;
-
-            bool firePressed = Input.GetKey(KeyCode.Space);
-
-            if (Time.time > _nextFire && firePressed)
+            
+            if (Time.time > _nextFire)
             {
                 _nextFire = Time.time + FireRate;
                 Instantiate(Shot, ShotsSpawn.position, Quaternion.identity);
