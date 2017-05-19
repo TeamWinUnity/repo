@@ -1,22 +1,20 @@
 ﻿using System;
 using UnityEngine;
 
+[Serializable]
+public class Bounds
+{
+    public float xMin, xMax, zMin, zMax;
+}
+
 namespace Assets.Scripts
 {
-    [Serializable]
-    public class Bounds
-    {
-        public float XMin, XMax;
-        public float ZMin, ZMax;
-    }
-
     public class PlayerController : MonoBehaviour
     {
         public GameController controller;
         private float currentSpeed = 4;
         private Rigidbody _body;
         private float _nextFire;
-
 
         public Bounds GameBounds;
         public float Speed;
@@ -37,8 +35,9 @@ namespace Assets.Scripts
         void Update()
         {
             if (!EnableControl) return;
-            
-            if (Time.time > _nextFire)
+
+            bool fire = Input.GetKey(KeyCode.Space);
+            if (Time.time > _nextFire && fire)
             {
                 _nextFire = Time.time + FireRate;
                 Instantiate(Shot, ShotsSpawn.position, Quaternion.identity);
@@ -61,9 +60,9 @@ namespace Assets.Scripts
                 _body.velocity = movement * currentSpeed;
 
                 _body.position = new Vector3(
-                    Mathf.Clamp(_body.position.x, GameBounds.XMin, GameBounds.XMax),
+                    Mathf.Clamp(_body.position.x, GameBounds.xMin, GameBounds.xMax),
                     0,
-                    Mathf.Clamp(_body.position.z, GameBounds.ZMin, GameBounds.ZMax));
+                    Mathf.Clamp(_body.position.z, GameBounds.zMin, GameBounds.zMax));
 
                 _body.rotation = Quaternion.Euler(_body.velocity.z > 0 ? _body.velocity.z * Tilt / 2 : 0, 0, _body.velocity.x * -Tilt);
             }

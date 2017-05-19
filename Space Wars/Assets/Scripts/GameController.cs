@@ -123,7 +123,7 @@ namespace Assets.Scripts
         {
             if (currentBest < score)
             {
-                BinaryFormatter bf = new BinaryFormatter();
+                var bf = new BinaryFormatter();
                 FileStream file = File.Create(Path.Combine(Application.persistentDataPath, GameState.SaveFilename));
                 bf.Serialize(file, new GameState() { BestScore = score });
                 file.Close();

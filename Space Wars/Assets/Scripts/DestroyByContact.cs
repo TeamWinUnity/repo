@@ -14,34 +14,36 @@ namespace Assets.Scripts
         {
             GameObject gameControllerObject = GameObject.FindWithTag("GameController");
             if (gameControllerObject != null)
-            {
                 gameController = gameControllerObject.GetComponent<GameController>();
-            }
 
             if (gameController == null)
-            {
                 Debug.Log("Cannot find GameController object");
-            }
         }
 
         void OnTriggerEnter(Collider other)
         {
-            if (other.tag == "Boundary") return;
+            if (other.CompareTag("Boundary") || other.CompareTag("Enemy")) return;
 
             if (other.tag == "Destroyer")
             {
-                Instantiate(explosion, transform.position, transform.rotation);
+                if (explosion != null) Instantiate(explosion, transform.position, transform.rotation);
                 Destroy(gameObject);
                 return;
             }
 
-            Instantiate(explosion, transform.position, transform.rotation);
-            if (other.tag == "Player")
+            if(explosion != null) Instantiate(explosion, transform.position, transform.rotation);
+            switch (other.tag)
             {
-                Instantiate(playerExplosion, other.transform.position, transform.rotation);
-                Instantiate(destroyer, other.transform.position, transform.rotation);
-                gameController.EndGame();
-            } else if(other.tag == "Bolt") gameController.AddScore(scoreValue);
+                case "Player":
+                    Instantiate(playerExplosion, other.transform.position, transform.rotation);
+                    Instantiate(destroyer, other.transform.position, transform.rotation);
+                    gameController.EndGame();
+                    break;
+                case "Bolt":
+                    gameController.AddScore(scoreValue);
+                    break;
+            }
+
             Destroy(other.gameObject);
             Destroy(gameObject);
         }

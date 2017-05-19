@@ -166,6 +166,31 @@ Prefab:
       propertyPath: Speed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 114767798088380476, guid: 0e6ede43e93b58842a0f82d4399754f5,
+        type: 2}
+      propertyPath: GameBounds.xMin
+      value: -5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114767798088380476, guid: 0e6ede43e93b58842a0f82d4399754f5,
+        type: 2}
+      propertyPath: GameBounds.xMax
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114767798088380476, guid: 0e6ede43e93b58842a0f82d4399754f5,
+        type: 2}
+      propertyPath: GameBounds.zMin
+      value: -8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114767798088380476, guid: 0e6ede43e93b58842a0f82d4399754f5,
+        type: 2}
+      propertyPath: GameBounds.zMax
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 65409994266370126, guid: 0e6ede43e93b58842a0f82d4399754f5,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0e6ede43e93b58842a0f82d4399754f5, type: 2}
   m_IsPrefabParent: 0
@@ -562,7 +587,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -718573056
+  randomSeed: 605799802
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3603,7 +3628,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -1080674868
+  randomSeed: 754720653
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -7092,10 +7117,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 1638424333}
   GameBounds:
-    XMin: -5.4
-    XMax: 5.4
-    ZMin: -8.5
-    ZMax: 4
+    xMin: -5.5
+    xMax: 5.5
+    zMin: -8.5
+    zMax: 4
   Speed: 10
   Tilt: 3
   Shot: {fileID: 1021938255146932, guid: 04d2dd4f15d17314fbc7734960d8db01, type: 2}
@@ -7354,7 +7379,8 @@ MonoBehaviour:
   - {fileID: 1010330473166212, guid: 391d72d80f04684438937decf73e3ea9, type: 2}
   - {fileID: 1412164684925566, guid: e3947615605c5644fb540a9653aa8019, type: 2}
   - {fileID: 1307848632351004, guid: 6f5e8ef9f0960e946ba0e11ec3149ac9, type: 2}
-  - {fileID: 1962703020375708, guid: b5346cebbf021434ea28dd7723d90f44, type: 2}
+  - {fileID: 1073681869310224, guid: b5346cebbf021434ea28dd7723d90f44, type: 2}
+  - {fileID: 1843860288369296, guid: ad2c9d302e7ab164c99137eb42b93f2c, type: 2}
   hazardCount: 10
   spawnWait: 0.2
   startWait: 1
