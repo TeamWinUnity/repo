@@ -1,14 +1,14 @@
 ﻿using System;
 using UnityEngine;
 
+public class Bounds
+{
+    public float xMin, xMax, zMin, zMax;
+}
+
 namespace Assets.Scripts
 {
     [Serializable]
-    public class Bounds
-    {
-        public float XMin, XMax;
-        public float ZMin, ZMax;
-    }
 
     public class PlayerController : MonoBehaviour
     {
@@ -63,9 +63,9 @@ namespace Assets.Scripts
                 _body.velocity = movement * currentSpeed;
 
                 _body.position = new Vector3(
-                    Mathf.Clamp(_body.position.x, GameBounds.XMin, GameBounds.XMax),
+                    Mathf.Clamp(_body.position.x, GameBounds.xMin, GameBounds.xMax),
                     0,
-                    Mathf.Clamp(_body.position.z, GameBounds.ZMin, GameBounds.ZMax));
+                    Mathf.Clamp(_body.position.z, GameBounds.zMin, GameBounds.zMax));
 
                 _body.rotation = Quaternion.Euler(_body.velocity.z > 0 ? _body.velocity.z * Tilt / 2 : 0, 0, _body.velocity.x * -Tilt);
             }

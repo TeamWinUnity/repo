@@ -26,7 +26,7 @@ namespace Assets.Scripts
 
         void OnTriggerEnter(Collider other)
         {
-            if (other.tag == "Boundary") return;
+            if (other.CompareTag("Boundary") || other.CompareTag("Enemy")) return;
 
             if (other.tag == "Destroyer")
             {
@@ -35,6 +35,7 @@ namespace Assets.Scripts
                 return;
             }
 
+            if(explosion!=null)
             Instantiate(explosion, transform.position, transform.rotation);
             if (other.tag == "Player")
             {
@@ -42,6 +43,7 @@ namespace Assets.Scripts
                 Instantiate(destroyer, other.transform.position, transform.rotation);
                 gameController.EndGame();
             } else if(other.tag == "Bolt") gameController.AddScore(scoreValue);
+
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
